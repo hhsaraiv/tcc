@@ -1,272 +1,358 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-    <title>Cards para Apresentação</title>
+    <meta charset="UTF-8">
+    <title>Apresentação - Eutanásia: Direito ou Crime?</title>
     <style>
         body {
             margin: 0;
             padding: 20px;
-            font-family: Arial, sans-serif;
             display: flex;
-            flex-direction: column;
+            justify-content: center;
             align-items: center;
             min-height: 100vh;
+            font-family: 'Arial', sans-serif;
             background: #f0f2f5;
         }
 
         .container {
-            max-width: 800px;
-            width: 100%;
             position: relative;
+            width: 800px;
             height: 500px;
         }
 
         .card {
             position: absolute;
             width: 100%;
+            height: 100%;
             background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             opacity: 0;
             transition: opacity 0.3s ease;
-            visibility: hidden;
-            height: 450px;
-            overflow-y: auto;
+            display: none;
+            box-sizing: border-box;
         }
 
         .card.active {
             opacity: 1;
-            visibility: visible;
+            display: block;
         }
 
-        .navigation {
+        .card h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .card-content {
+            height: calc(100% - 100px);
+            overflow-y: auto;
+        }
+
+        .controls {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
             display: flex;
             justify-content: center;
             gap: 20px;
-            margin-top: 20px;
-            width: 100%;
         }
 
-        .nav-button {
-            background: #2c3e50;
+        .control-btn {
+            background: #3498db;
             color: white;
             border: none;
             padding: 10px 20px;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 16px;
             transition: background 0.3s ease;
         }
 
-        .nav-button:hover {
-            background: #34495e;
+        .control-btn:hover {
+            background: #2980b9;
         }
 
-        h1 {
-            color: #2c3e50;
-            margin-bottom: 30px;
-        }
-
-        h2 {
-            color: #34495e;
-            border-bottom: 2px solid #bdc3c7;
-            padding-bottom: 5px;
-        }
-
-        h3 {
+        .card-number {
+            position: absolute;
+            top: 20px;
+            right: 20px;
             color: #7f8c8d;
-        }
-
-        .time {
-            color: #e74c3c;
-            font-weight: bold;
+            font-size: 0.9em;
         }
 
         ul {
+            margin: 10px 0;
             padding-left: 20px;
         }
 
-        .indicator {
-            margin-top: 10px;
-            color: #7f8c8d;
+        li {
+            margin: 5px 0;
+            line-height: 1.5;
+        }
+
+        .content-wrapper {
+            height: calc(100% - 60px);
+            overflow-y: auto;
+            padding-right: 10px;
         }
     </style>
 </head>
 <body>
-    <h1>Um Povo Sem Pernas, Mas Que Caminha</h1>
-    
     <div class="container">
-        <!-- Card 1.1 -->
-        <div class="card" data-block="1">
-            <h2>BLOCO 1 - Disposições Constitucionais <span class="time">(2.5 min)</span></h2>
-            <ul>
-                <li><strong>Brasil (CF/88)</strong>: Art. 4º - integração econômica, política, social e cultural</li>
-                <li><strong>Bolívia (2009)</strong>: Art. 265</li>
-                <li><strong>Venezuela (1999)</strong>: Art. 153</li>
-                <li><strong>Equador (2008)</strong>: Art. 416</li>
-                <li><strong>Paraguai (1992)</strong>: Art. 144</li>
-                <li><strong>Peru (1993)</strong>: Art. 44</li>
-            </ul>
+        <div class="card active" id="card1">
+            <div class="card-number">1/10</div>
+            <h2>Introdução</h2>
+            <div class="content-wrapper">
+                <p><strong>Apresentação:</strong></p>
+                <p>"Boa tarde, meu nome é Nathalia. Hoje apresentarei minha pesquisa 'EUTANÁSIA: DIREITO OU CRIME?'"</p>
+                <p><strong>Justificativa da escolha:</strong></p>
+                <ul>
+                    <li>Crescente debate mundial</li>
+                    <li>Aumento de "turismo da morte"</li>
+                    <li>Necessidade de discussão no Brasil</li>
+                </ul>
+            </div>
         </div>
 
-        <!-- Card 1.2 -->
-        <div class="card" data-block="1">
-            <h2>BLOCO 1 - Blocos Regionais <span class="time">(2.5 min)</span></h2>
-            <h3>Blocos Econômicos:</h3>
-            <ul>
-                <li>ALALC (1960) → ALADI (1980)</li>
-                <li>MERCOSUL (1991): Brasil, Argentina, Paraguai, Uruguai</li>
-                <li>CAN (1969): Bolívia, Colômbia, Equador, Peru</li>
-            </ul>
-            <h3>Blocos Políticos:</h3>
-            <ul>
-                <li>UNASUL (2008-2018): 12 países</li>
-                <li>CELAC (2010): 33 países</li>
-                <li>ALBA (2004): Venezuela-Cuba</li>
-            </ul>
+        <div class="card" id="card2">
+            <div class="card-number">2/10</div>
+            <h2>Conceitos Fundamentais</h2>
+            <div class="content-wrapper">
+                <p><strong>Eutanásia:</strong></p>
+                <ul>
+                    <li>Etimologia: "boa morte" (grego)</li>
+                    <li>Morte provocada por compaixão</li>
+                    <li>Tipos: ativa e passiva</li>
+                </ul>
+                <p><strong>Distanásia:</strong></p>
+                <ul>
+                    <li>Prolongamento artificial da vida</li>
+                    <li>Obstinação terapêutica</li>
+                </ul>
+                <p><strong>Ortotanásia:</strong></p>
+                <ul>
+                    <li>Morte natural</li>
+                    <li>Sem interferência artificial</li>
+                </ul>
+            </div>
         </div>
 
-        <!-- Card 2.1 -->
-        <div class="card" data-block="2">
-            <h2>BLOCO 2 - Contexto Ditatorial <span class="time">(2.5 min)</span></h2>
-            <h3>Períodos Ditatoriais:</h3>
-            <ul>
-                <li>Brasil (1964-1985)</li>
-                <li>Chile (1973-1990)</li>
-                <li>Argentina (1976-1983)</li>
-                <li>Uruguai (1973-1985)</li>
-                <li>Paraguai (1954-1989)</li>
-            </ul>
+        <div class="card" id="card3">
+            <div class="card-number">3/10</div>
+            <h2>História Antiga</h2>
+            <div class="content-wrapper">
+                <p><strong>Grécia Antiga:</strong></p>
+                <ul>
+                    <li>Prática aceita pelos médicos</li>
+                    <li>Apoio filosófico de Platão</li>
+                    <li>Hipócrates: primeira oposição formal</li>
+                </ul>
+                <p><strong>Roma Antiga:</strong></p>
+                <ul>
+                    <li>Lei das XII Tábuas</li>
+                    <li>Aceitação social</li>
+                    <li>Casos históricos documentados</li>
+                </ul>
+            </div>
         </div>
 
-        <!-- Card 2.2 -->
-        <div class="card" data-block="2">
-            <h2>BLOCO 2 - Justiça de Transição <span class="time">(2.5 min)</span></h2>
-            <h3>Leis de Anistia:</h3>
-            <ul>
-                <li>Brasil: Lei 6.683/1979</li>
-                <li>Chile: Decreto-Lei 2.191/1978</li>
-                <li>Uruguai: Lei de Caducidad (1986)</li>
-            </ul>
-            <h3>Comissões da Verdade:</h3>
-            <ul>
-                <li>Argentina: CONADEP (1983)</li>
-                <li>Chile: Comissão Rettig (1990)</li>
-                <li>Brasil: CNV (2011-2014)</li>
-            </ul>
+        <div class="card" id="card4">
+            <div class="card-number">4/10</div>
+            <h2>Idade Média e Moderna</h2>
+            <div class="content-wrapper">
+                <p><strong>Período Medieval:</strong></p>
+                <ul>
+                    <li>Forte influência religiosa</li>
+                    <li>Proibição absoluta</li>
+                    <li>Santo Tomás de Aquino: argumentos contrários</li>
+                </ul>
+                <p><strong>Renascimento:</strong></p>
+                <ul>
+                    <li>Thomas More: defesa em "Utopia"</li>
+                    <li>Francis Bacon: termo "eutanásia"</li>
+                    <li>Início do debate científico</li>
+                </ul>
+            </div>
         </div>
 
-        <!-- Card 3.1 -->
-        <div class="card" data-block="3">
-            <h2>BLOCO 3 - Estrutura do SIDH <span class="time">(2.5 min)</span></h2>
-            <h3>CIDH (desde 1959):</h3>
-            <ul>
-                <li>7 membros independentes</li>
-                <li>Sede: Washington D.C.</li>
-                <li>Funções: monitoramento, recomendações, petições</li>
-            </ul>
-            <h3>Corte IDH (desde 1979):</h3>
-            <ul>
-                <li>7 juízes</li>
-                <li>Sede: San José, Costa Rica</li>
-                <li>20 países aceitam jurisdição</li>
-            </ul>
+        <div class="card" id="card5">
+            <div class="card-number">5/10</div>
+            <h2>Século XX e Nazismo</h2>
+            <div class="content-wrapper">
+                <p><strong>Programa Aktion T4:</strong></p>
+                <ul>
+                    <li>Deturpação do conceito</li>
+                    <li>Eugenia</li>
+                    <li>Consequências históricas</li>
+                </ul>
+                <p><strong>Pós-Guerra:</strong></p>
+                <ul>
+                    <li>Declaração Universal dos Direitos Humanos</li>
+                    <li>Novos debates éticos</li>
+                    <li>Desenvolvimento da bioética</li>
+                </ul>
+            </div>
         </div>
 
-        <!-- Card 3.2 -->
-        <div class="card" data-block="3">
-            <h2>BLOCO 3 - Casos Emblemáticos <span class="time">(2.5 min)</span></h2>
-            <h3>Maria da Penha vs Brasil (2001)</h3>
-            <ul>
-                <li>Resultado: Lei 11.340/2006</li>
-                <li>Efeito regional: legislações similares</li>
-            </ul>
-            <h3>Damião Ximenes vs Brasil (2004)</h3>
-            <ul>
-                <li>Lei 10.216/2001: Reforma Psiquiátrica</li>
-                <li>Resolução CNJ 487/2022</li>
-            </ul>
-            <h3>La Cantuta vs Peru (2006)</h3>
-            <ul>
-                <li>Lei 28.592: Plano Integral de Reparações</li>
-                <li>Precedente sobre leis de anistia</li>
-            </ul>
+        <div class="card" id="card6">
+            <div class="card-number">6/10</div>
+            <h2>Legislação Brasileira</h2>
+            <div class="content-wrapper">
+                <p><strong>Código Penal:</strong></p>
+                <ul>
+                    <li>Art. 121 §1º - Homicídio privilegiado</li>
+                    <li>Ausência de legislação específica</li>
+                </ul>
+                <p><strong>Constituição Federal:</strong></p>
+                <ul>
+                    <li>Art. 1º, III - Dignidade da pessoa humana</li>
+                    <li>Art. 5º - Direito à vida</li>
+                </ul>
+                <p><strong>Conselho Federal de Medicina:</strong></p>
+                <ul>
+                    <li>Resolução 1.995/2012</li>
+                    <li>Código de Ética Médica</li>
+                </ul>
+            </div>
         </div>
 
-        <!-- Card 4.1 -->
-        <div class="card" data-block="4">
-            <h2>BLOCO 4 - Resultados Alcançados <span class="time">(2.5 min)</span></h2>
-            <h3>Harmonização legislativa regional:</h3>
-            <ul>
-                <li>Leis de violência doméstica</li>
-                <li>Reformas psiquiátricas</li>
-                <li>Mecanismos de reparação</li>
-            </ul>
-            <h3>Outros Avanços:</h3>
-            <ul>
-                <li>Fortalecimento institucional</li>
-                <li>Consciência comum sobre direitos humanos</li>
-            </ul>
+        <div class="card" id="card7">
+            <div class="card-number">7/10</div>
+            <h2>Direito Comparado</h2>
+            <div class="content-wrapper">
+                <p><strong>Holanda:</strong></p>
+                <ul>
+                    <li>Primeira legalização (2001)</li>
+                    <li>Critérios rigorosos</li>
+                    <li>Resultados positivos</li>
+                </ul>
+                <p><strong>Bélgica:</strong></p>
+                <ul>
+                    <li>Inclusão de menores</li>
+                    <li>Ampliação gradual</li>
+                </ul>
+                <p><strong>Canadá:</strong></p>
+                <ul>
+                    <li>Legislação recente</li>
+                    <li>Modelo abrangente</li>
+                </ul>
+            </div>
         </div>
 
-        <!-- Card 4.2 -->
-        <div class="card" data-block="4">
-            <h2>BLOCO 4 - Desafios e Perspectivas <span class="time">(2.5 min)</span></h2>
-            <h3>Desafios Atuais:</h3>
-            <ul>
-                <li>Implementação efetiva</li>
-                <li>Resistência estatal</li>
-                <li>Recursos limitados</li>
-            </ul>
-            <h3>Perspectivas Futuras:</h3>
-            <ul>
-                <li>Estudos sobre efetividade das reparações</li>
-                <li>Impacto na jurisprudência nacional</li>
-                <li>Correlação direitos humanos e desenvolvimento</li>
-                <li>Maior participação social</li>
-                <li>Fortalecimento institucional</li>
-                <li>Ampliação do acesso ao sistema</li>
-            </ul>
+        <div class="card" id="card8">
+            <div class="card-number">8/10</div>
+            <h2>Argumentos Favoráveis</h2>
+            <div class="content-wrapper">
+                <p><strong>Dignidade humana:</strong></p>
+                <ul>
+                    <li>Autonomia individual</li>
+                    <li>Direito de escolha</li>
+                </ul>
+                <p><strong>Aspectos médicos:</strong></p>
+                <ul>
+                    <li>Fim do sofrimento</li>
+                    <li>Respeito à vontade do paciente</li>
+                </ul>
+                <p><strong>Aspectos sociais:</strong></p>
+                <ul>
+                    <li>Custos emocionais</li>
+                    <li>Impacto familiar</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card" id="card9">
+            <div class="card-number">9/10</div>
+            <h2>Argumentos Contrários</h2>
+            <div class="content-wrapper">
+                <p><strong>Questões religiosas:</strong></p>
+                <ul>
+                    <li>Sacralidade da vida</li>
+                    <li>Aspectos morais</li>
+                </ul>
+                <p><strong>Questões médicas:</strong></p>
+                <ul>
+                    <li>Juramento de Hipócrates</li>
+                    <li>Avanços em cuidados paliativos</li>
+                </ul>
+                <p><strong>Riscos:</strong></p>
+                <ul>
+                    <li>Possíveis abusos</li>
+                    <li>Pressão social/familiar</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card" id="card10">
+            <div class="card-number">10/10</div>
+            <h2>Conclusão</h2>
+            <div class="content-wrapper">
+                <p><strong>Necessidade de evolução legal:</strong></p>
+                <ul>
+                    <li>Legislação específica</li>
+                    <li>Regulamentação clara</li>
+                    <li>Critérios definidos</li>
+                </ul>
+                <p><strong>Propostas:</strong></p>
+                <ul>
+                    <li>Debate amplo na sociedade</li>
+                    <li>Estudo de legislações internacionais</li>
+                    <li>Adequação à realidade brasileira</li>
+                </ul>
+                <p><strong>Considerações finais:</strong></p>
+                <p>"A eutanásia, mais que um debate jurídico, é uma questão de dignidade e autodeterminação. O Brasil precisa evoluir sua legislação para garantir este direito fundamental."</p>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button class="control-btn" id="prev">← Anterior</button>
+            <button class="control-btn" id="next">Próximo →</button>
         </div>
     </div>
-
-    <div class="navigation">
-        <button class="nav-button" onclick="previousCard()">←</button>
-        <button class="nav-button" onclick="nextCard()">→</button>
-    </div>
-    <div class="indicator">Card <span id="current">1</span> de <span id="total">8</span></div>
 
     <script>
-        let currentCard = 0;
-        const cards = document.querySelectorAll('.card');
-        const totalCards = cards.length;
-        document.getElementById('total').textContent = totalCards;
+        let currentCard = 1;
+        const totalCards = 10;
 
-        function showCard(index) {
-            cards.forEach(card => card.classList.remove('active'));
-            cards[index].classList.add('active');
-            document.getElementById('current').textContent = index + 1;
+        function showCard(cardNumber) {
+            document.querySelectorAll('.card').forEach(card => {
+                card.classList.remove('active');
+            });
+            document.getElementById(`card${cardNumber}`).classList.add('active');
         }
 
-        function nextCard() {
-            currentCard = (currentCard + 1) % totalCards;
-            showCard(currentCard);
-        }
+        document.getElementById('prev').addEventListener('click', () => {
+            if (currentCard > 1) {
+                currentCard--;
+                showCard(currentCard);
+            }
+        });
 
-        function previousCard() {
-            currentCard = (currentCard - 1 + totalCards) % totalCards;
-            showCard(currentCard);
-        }
+        document.getElementById('next').addEventListener('click', () => {
+            if (currentCard < totalCards) {
+                currentCard++;
+                showCard(currentCard);
+            }
+        });
 
         // Keyboard navigation
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowRight') nextCard();
-            if (e.key === 'ArrowLeft') previousCard();
+            if (e.key === 'ArrowLeft') {
+                if (currentCard > 1) {
+                    currentCard--;
+                    showCard(currentCard);
+                }
+            } else if (e.key === 'ArrowRight') {
+                if (currentCard < totalCards) {
+                    currentCard++;
+                    showCard(currentCard);
+                }
+            }
         });
-
-        // Show first card on load
-        showCard(0);
     </script>
 </body>
 </html>
